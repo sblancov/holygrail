@@ -1,33 +1,31 @@
 <h1>Admin panel</h1>
 
-<p>Hi mate! I fall in love for Diablo 2 many years ago and I like to programming so... enjoy.</p>
+<p>
+  Hey there, fellow gamer!
+</p>
+<p>
+  Many years ago, I fell in love with Diablo 2 and its mods. I also love to program, and from the union of these two passions, this project was born: a Holy Grail tracker for PD2.
+</p>
+<p>
+  If you like this tool or find it useful, you can contribute your ideas or report any bugs in <a href="https://github.com/sblancov/holygrail/issues" target="_blank">my project <mat-icon class="medium">open_in_new</mat-icon></a>.
+</p>
+<p>
+  This is the administration panel for the tool. It only has three buttons:
+</p>
 
-<p>This panel manage internal data in your browser. Technical stuff...</p>
-
-<p>I'll try to explain it in a simply way.</p>
-
-<p>Data is stored in your browser. Nobody can access to it but you. Even the creator of this app cannot access to it (this is designed so on purpose, I won't make money with your data).</p>
+<ul>
+  <li><strong>Download:</strong> This creates a backup copy on your device.</li>
+  <li><strong>Reset:</strong> This deletes all information. Be careful!</li>
+  <li><strong>Upload:</strong> This recovers a backup copy from your device.</li>
+</ul>
 
 <p>
-  This has a caveat.
-  You have to be concerned about your data.
-  If you remove your data, it is not my business. Sorry!
+  This way, you can keep track of multiple Holy Grails for each season and character, for example.
 </p>
 
 <section>
-  <div class="file-input-container">
-    <button class="link-pointer" matButton>
-      <mat-icon>
-        upload
-      </mat-icon>
-      <span>
-        Upload
-      </span>
-    </button>
-    <input type="file" class="hidden-file-input" (change)="uploadLocalStorage($event)">
-  </div>
 
-  <a matButton href="{{ downloadLocalStorage() }}" download="PD2HolyGrailBackup.json">
+  <a class="upload" matButton href="{{ downloadLocalStorage() }}" download="PD2HolyGrailBackup.json">
     <mat-icon>download</mat-icon>
     <div>
       Download
@@ -41,4 +39,15 @@
     </div>
   </button>
 
+  <div class="file-input-container">
+    <button class="link-pointer" matButton>
+      <mat-icon>
+        upload
+      </mat-icon>
+      <span>
+        Upload
+      </span>
+    </button>
+    <input type="file" class="hidden-file-input" (change)="uploadLocalStorage($event)">
+  </div>
 </section>

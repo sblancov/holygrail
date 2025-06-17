@@ -9,8 +9,13 @@ button {
   align-items: center;
 }
 
+mat-icon.medium {
+  font-size: medium;
+  vertical-align: text-top;
+}
 
-a {
+
+a.upload {
   display: flex;
   align-items: center;
   border: 1px solid grey;
