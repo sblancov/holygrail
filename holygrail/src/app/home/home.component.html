@@ -1,0 +1,46 @@
+  <mat-tab-group>
+    <mat-tab label="Runes">
+      <mat-grid-list cols="10" rowHeight="1:1">
+        @for (item of items.getRunes(); track item.id) {
+        <mat-grid-tile id="item-{{ item.id }}" (click)="foundItem($event)" style="background: {{ foundColor(item) }}">
+          <div>
+            {{ item.name }}
+          </div>
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="RuneWords">
+      <mat-grid-list cols="10" rowHeight="1:1">
+        @for (item of items.getRunewords(); track item.id) {
+        <mat-grid-tile id="item-{{ item.id }}" (click)="foundItem($event)" style="background: {{ foundColor(item) }} ">
+          <div>
+            {{ item.name }}
+          </div>
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Sets">
+      <mat-grid-list cols="10" rowHeight="1:1">
+        @for (item of items.getSets(); track item.id) {
+        <mat-grid-tile id="item-{{ item.id }}" (click)="foundItem($event)" style="background: {{ foundColor(item) }}">
+          <div>
+            {{ item.name }}
+          </div>
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Uniques">
+      <mat-grid-list cols="10" rowHeight="1:1">
+        @for (item of items.getUniques(); track item.id) {
+        <mat-grid-tile id="item-{{ item.id }}" (click)="foundItem($event)" style="background: {{ foundColor(item) }}">
+          <div>
+            {{ item.name }}
+          </div>
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </mat-tab>
+  </mat-tab-group>

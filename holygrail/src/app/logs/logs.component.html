@@ -1,0 +1,22 @@
+<h1>Logs</h1>
+
+<mat-list>
+  @for (log of getLogs(); track log.id) {
+    <mat-list-item>
+      <span style="color: gray;">{{log.timestamp}}</span> {{log.message}}
+    </mat-list-item>
+  } @empty {
+      <p style="text-align: center;">
+        This log is empty.
+      </p>
+      <p style="text-align: center;">
+        You can start to play and get some stuff.
+      </p>
+      <p style="text-align: center;">
+        This tool is waiting for you, come on!
+      </p>
+      <p style="text-align: center;">
+        Best wishes from here :)
+      </p>
+  }
+</mat-list>

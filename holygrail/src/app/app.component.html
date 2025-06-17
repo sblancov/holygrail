@@ -1,0 +1,17 @@
+<div class="container">
+  <app-toolbar></app-toolbar>
+
+  <mat-drawer-container>
+    <mat-drawer fixedInViewport #sidenav mode="side" [opened]="toggleSidebar.opened">
+      <div class="links">
+        <a routerLink="/">Items</a>
+        <a routerLink="/stats">Stats</a>
+        <a routerLink="/logs">Logs</a>
+        <a routerLink="/admin">Admin</a>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet />
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

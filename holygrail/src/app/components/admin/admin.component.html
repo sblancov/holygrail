@@ -1,0 +1,36 @@
+<h1>Admin panel</h1>
+
+<p>Hi mate! I fall in love for Diablo 2 many years ago and I like to programming so... enjoy.</p>
+
+<p>This panel manage internal data in your browser. Technical stuff...</p>
+
+<p>I'll try to explain it in a simply way.</p>
+
+<p>Data is stored in your browser. Nobody can access to it but you. Even the creator of this app cannot access to it (this is designed so on purpose, I won't make money with your data).</p>
+
+<p>
+  This has a caveat.
+  You have to be concerned about your data.
+  If you remove your data, it is not my business. Sorry!
+</p>
+
+<section>
+  <button matButton (click)="uploadLocalStorage()" >
+    <mat-icon>upload</mat-icon>
+    <div>
+      Upload
+    </div>
+  </button>
+  <a matButton href="{{ downloadLocalStorage() }}" download="PD2HolyGrailBackup.json">
+    <mat-icon>download</mat-icon>
+    <div>
+      Download
+    </div>
+  </a>
+  <button matButton (click)="removeLocalStorage()">
+    <mat-icon>delete</mat-icon>
+    <div>
+      Reset
+    </div>
+  </button>
+</section>
