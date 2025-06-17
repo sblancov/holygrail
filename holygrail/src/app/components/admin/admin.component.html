@@ -15,22 +15,30 @@
 </p>
 
 <section>
-  <button matButton (click)="uploadLocalStorage()" >
-    <mat-icon>upload</mat-icon>
-    <div>
-      Upload
-    </div>
-  </button>
+  <div class="file-input-container">
+    <button class="link-pointer" matButton>
+      <mat-icon>
+        upload
+      </mat-icon>
+      <span>
+        Upload
+      </span>
+    </button>
+    <input type="file" class="hidden-file-input" (change)="uploadLocalStorage($event)">
+  </div>
+
   <a matButton href="{{ downloadLocalStorage() }}" download="PD2HolyGrailBackup.json">
     <mat-icon>download</mat-icon>
     <div>
       Download
     </div>
   </a>
-  <button matButton (click)="removeLocalStorage()">
+
+  <button class="link-pointer" matButton (click)="removeLocalStorage()">
     <mat-icon>delete</mat-icon>
     <div>
       Reset
     </div>
   </button>
+
 </section>

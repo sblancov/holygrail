@@ -1,24 +1,46 @@
-
 section {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-  button {
-    display: flex;
-    align-items: center;
-  }
+button {
+  display: flex;
+  align-items: center;
+}
 
 
-  a {
-    display: flex;
-    align-items: center;
-    border: 1px solid grey;
-    border-radius: 3px;
-    padding: 2px 5px;
-    text-decoration: none;
-    color: black;
-    font-size: 13px;
-    background-color: #efefef;
-  }
+a {
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 2px 5px;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+  background-color: #efefef;
+}
+
+.file-input-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hidden-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.link-pointer {
+  cursor: pointer;
+}

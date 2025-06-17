@@ -28,8 +28,21 @@ export class AdminComponent {
     return window.URL.createObjectURL(blob);
   }
 
-  uploadLocalStorage() {
+  uploadLocalStorage(event: Event) {
+    console.log(event);
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      const reader = new FileReader();
 
+      reader.onload = (e: any) => {
+        const data = e.target.result;
+        const items = JSON.parse(data);
+        this.items.setItems(items);
+      };
+
+      reader.readAsText(file);
+    }
   }
 
 }
