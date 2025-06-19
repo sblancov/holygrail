@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 
-import { ItemsService } from '../../services/items.service';
+import { Item, ItemsService } from '../../services/items.service';
 import { LogsService } from '../../services/logs.service';
 
 @Component({
@@ -29,7 +29,6 @@ export class AdminComponent {
   }
 
   uploadLocalStorage(event: Event) {
-    console.log(event);
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
       const file = input.files[0];
@@ -37,12 +36,22 @@ export class AdminComponent {
 
       reader.onload = (e: any) => {
         const data = e.target.result;
-        const items = JSON.parse(data);
-        this.items.setItems(items);
+        this.updateItemsVersion(data);
       };
 
       reader.readAsText(file);
     }
+  }
+
+  updateItemsVersion(stored_items: string) {
+    let parsed_stored_items: Item[] = JSON.parse(stored_items)
+    const diff = this.items.items.length - parsed_stored_items.length;
+    if (diff > 0) {
+      for (let index = parsed_stored_items.length; index < this.items.items.length; index++) {
+        parsed_stored_items.push(this.items.items[index])
+      }
+    }
+    this.items.setItems(parsed_stored_items);
   }
 
 }
